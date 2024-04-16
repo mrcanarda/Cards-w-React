@@ -1,30 +1,25 @@
-import React from "react";
+import Angular from "./images/angular.jpg";
+import Bootstrap from "./images/bootstrap5.png";
+import Ccsharp from "./images/ccsharp.png";
+import KompleWeb from "./images/kompleweb.jpg";
+import "./Course.css";
 
-export const Course = ({ image, title, description }) => {
-  // const { title, description } = props;
-  return (
-    <div className="card">
-      <div className="card-image">
-        <figure className="image is-4by3">
-          <img src={image} alt="" />
-        </figure>
-      </div>
-      <div className="card-content">
-        <div className="media">
-          <div className="media-content">
-            <p className="title is-4">{title}</p>
-          </div>
-        </div>
-
-        <div className="content">{description}</div>
-      </div>
-    </div>
-    /* // <div>
-    //   <img src={image} alt="" />
-    //   <div>{title}</div>
-    //   <div>{description}</div>
-    // </div> */
-  );
+const courseMap = {
+  Angular,
+  Bootstrap,
+  Ccsharp,
+  KompleWeb,
 };
+
+function Course({ courseName }) {
+  // console.log(Angular);
+  // console.log(courseName);
+  console.log(courseMap[courseName]);
+  return (
+    <div className="courseDiv">
+      <img className="course" src={courseMap[courseName]} alt="" />
+    </div>
+  );
+}
 
 export default Course;
